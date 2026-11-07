@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1= title
+    p
+      a(href="/") Return to the homepage
+    form(method="POST", action="/update-cobj")
+      each prop in properties
+        div
+          label(for=prop.name)= prop.label
+          input(type=prop.type, id=prop.name, name=prop.name, required)
+      button(type="submit") Create record
